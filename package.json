@@ -1,0 +1,13 @@
+{
+  "name": "valorantjs",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "typescript": "^4.6.3"
+  }
+}
