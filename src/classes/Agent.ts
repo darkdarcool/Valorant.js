@@ -42,4 +42,7 @@ export class Agent {
   getAssetName() {
     return this.assetName;
   }
+  raw() {
+    return this.agentData;
+  }
 }

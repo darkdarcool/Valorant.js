@@ -11,9 +11,14 @@ export default class Client {
     this.region = region;
     this.apiKey = apiKey;
   }
+  /**
+   * Gets the agent data for a specific agent
+   * @param agentName 
+   * @returns Agent
+   */
   async getAgent(agentName: string) {
     let url = urls.root(this.region) + urls.val_content;
-    let response = await request(url, this.apiKey, "characters");
+    let response = await request(url, this.apiKey, "characters");    
     for (let key in response) {
       if (response[key].name === agentName) { // Agent found
         let agentData: AgentData = response[key];
@@ -22,6 +27,15 @@ export default class Client {
     }
     // No agent was found
     return null;
-    
+  }
+  /**
+   * Gets a players id
+   * @param userName 
+   * @returns Response
+   */
+  async getUser(userName: string) {
+    let url = urls.user(userName);
+    let response = await request(url, this.apiKey);
+    return response;
   }
 }
